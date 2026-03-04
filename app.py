@@ -5,8 +5,8 @@ import numpy as np
 
 # Load Model dan Preprocessor dari folder yang sama
 try:
-    model = joblib.load("artifacts/model.pkl")
-    scaler = joblib.load("artifacts/preprocessor.pkl")
+    model = joblib.load("model.pkl")
+    scaler = joblib.load("preprocessor.pkl")
 except FileNotFoundError as e:
     st.error(f"Error: File tidak ditemukan. Pastikan kamu sudah menjalankan pipeline.py. Detail: {e}")
     st.stop()
@@ -57,4 +57,5 @@ def main():
             st.success("✅ **Hasil Prediksi: Risiko RENDAH.** \n\nKondisi jantung diprediksi relatif aman. Tetap jaga gaya hidup sehat!")
 
 if __name__ == "__main__":
+
     main()
